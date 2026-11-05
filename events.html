@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>جميع الفعاليات | دليل فعاليات الجامعة الافتراضية</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- ملف التنسيقات الخاص بالمشروع -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                دليل الفعاليات
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="فتح القائمة">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">جميع الفعاليات</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">من نحن</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- عنوان الصفحة -->
+    <header class="py-5 text-center">
+        <div class="container">
+            <h1 class="mb-3">جميع الفعاليات</h1>
+            <p class="text-muted">
+                اكتشف الفعاليات القادمة وابحث عن الفعالية التي تناسب اهتماماتك.
+            </p>
+        </div>
+    </header>
+
+    <main class="container pb-5">
+
+        <!-- البحث والفلترة -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h2 class="h5 mb-3">ابحث عن فعالية</h2>
+
+                <div class="row g-3">
+
+                    <!-- البحث باسم الفعالية -->
+                    <div class="col-md-6">
+                        <label for="searchInput" class="form-label">
+                            اسم الفعالية
+                        </label>
+
+                        <input type="search" id="searchInput" class="form-control" placeholder="اكتب اسم الفعالية...">
+                    </div>
+
+                    <!-- التصنيف -->
+                    <div class="col-md-6">
+                        <label for="categoryFilter" class="form-label">
+                            التصنيف
+                        </label>
+
+                        <select id="categoryFilter" class="form-select">
+                            <option value="">كل التصنيفات</option>
+                            <option value="culture">ثقافة</option>
+                            <option value="education">تعليم</option>
+                            <option value="sport">رياضة</option>
+                            <option value="music">موسيقى</option>
+                            <option value="family">عائلي</option>
+                        </select>
+                    </div>
+
+                    <!-- البحث حسب تاريخ الفعالية -->
+                    <div class="col-md-6">
+                        <label for="eventDate" class="form-label">
+                            تاريخ الفعالية
+                        </label>
+
+                        <input type="date" id="eventDate" class="form-control" placeholder="مثال: 15/11/2026"
+                            inputmode="numeric">
+                    </div>
+
+                    <!-- الموقع -->
+                    <div class="col-12">
+                        <label for="locationFilter" class="form-label">
+                            الموقع
+                        </label>
+
+                        <input type="search" id="locationFilter" class="form-control"
+                            placeholder="مثال: حمص، دمشق، عبر الإنترنت">
+                    </div>
+
+                    <!-- مسح الفلاتر -->
+                    <div class="col-12">
+                        <button type="button" id="resetFilters" class="btn btn-outline-secondary">
+                            مسح الفلاتر
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- عدد الفعاليات -->
+        <div class="mb-3">
+            <h2 class="h4">الفعاليات المتاحة</h2>
+        </div>
+
+        <!-- بطاقات الفعاليات -->
+        <div class="row g-4" id="eventsContainer">
+
+            <!-- الفعالية الأولى -->
+            <div class="col-md-6 col-lg-4 event-item" data-category="culture" data-date="2026-11-15" data-location="حمص"
+                data-event-id="culture">
+                <div class="card h-100 shadow-sm">
+
+                    <img src="assets/img/event-culture.jpg" class="card-img-top" alt="فعالية ثقافية"
+                        style="height: 220px; object-fit: cover;">
+
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-primary align-self-start mb-2">
+                            ثقافة
+                        </span>
+
+                        <h3 class="h5 card-title">
+                            المهرجان الثقافي
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            <strong>التاريخ:</strong> 15 تشرين الثاني 2026
+                        </p>
+
+                        <p class="text-muted mb-2">
+                            <strong>الموقع:</strong> حمص
+                        </p>
+
+                        <p class="card-text">
+                            فعالية للتعرّف على الثقافة والفنون والمواهب
+                            والمشاركة في الأنشطة الثقافية المتنوعة.
+                        </p>
+
+                        <a href="event.html?id=culture" class="btn btn-primary mt-auto">
+                            تفاصيل الفعالية
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفعالية الثانية -->
+            <div class="col-md-6 col-lg-4 event-item" data-category="education" data-date="2026-11-20"
+                data-location="دمشق" data-event-id="education">
+                <div class="card h-100 shadow-sm"><img src="assets/img/event-education.jpg" class="card-img-top"
+                        alt="فعالية تعليمية" style="height: 220px; object-fit: cover;">
+
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-success align-self-start mb-2">
+                            تعليم
+                        </span>
+
+                        <h3 class="h5 card-title">
+                            ورشة التعلم والتطوير
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            <strong>التاريخ:</strong> 20 تشرين الثاني 2026
+                        </p>
+
+                        <p class="text-muted mb-2">
+                            <strong>الموقع:</strong> دمشق
+                        </p>
+
+                        <p class="card-text">
+                            ورشة تعليمية تهدف إلى تطوير المهارات واكتساب
+                            معارف جديدة من خلال أنشطة تطبيقية.
+                        </p>
+
+                        <a href="event.html?id=education" class="btn btn-primary mt-auto">
+                            تفاصيل الفعالية
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفعالية الثالثة -->
+            <div class="col-md-6 col-lg-4 event-item" data-category="sport" data-date="2026-11-25" data-location="حمص"
+                data-event-id="sport">
+                <div class="card h-100 shadow-sm">
+
+                    <img src="assets/img/event-sport.jpg" class="card-img-top" alt="فعالية رياضية"
+                        style="height: 220px; object-fit: cover;">
+
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-danger align-self-start mb-2">
+                            رياضة
+                        </span>
+
+                        <h3 class="h5 card-title">
+                            اليوم الرياضي الجامعي
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            <strong>التاريخ:</strong> 25 تشرين الثاني 2026
+                        </p>
+
+                        <p class="text-muted mb-2">
+                            <strong>الموقع:</strong> حمص
+                        </p>
+
+                        <p class="card-text">
+                            يوم رياضي يتضمن مسابقات وأنشطة حركية تشجع
+                            على التعاون والروح الرياضية.
+                        </p>
+
+                        <a href="event.html?id=sport" class="btn btn-primary mt-auto">
+                            تفاصيل الفعالية
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفعالية الرابعة -->
+            <div class="col-md-6 col-lg-4 event-item" data-category="music" data-date="2026-12-01" data-location="حلب"
+                data-event-id="music">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event-music.jpg" class="card-img-top" alt="الأمسية الموسيقية">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-warning text-dark align-self-start mb-2">
+                            موسيقى
+                        </span>
+
+                        <h3 class="h5 card-title">
+                            الأمسية الموسيقية
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            <strong>التاريخ:</strong> 1 كانون الأول 2026
+                        </p>
+                        <p class="text-muted mb-2">
+                            <strong>الموقع:</strong> حلب
+                        </p>
+
+                        <p class="card-text">
+                            أمسية افتراضية للاستمتاع بالعروض الموسيقية
+                            والتعرّف على مواهب المشاركين.
+                        </p>
+
+                        <a href="event.html?id=music" class="btn btn-primary mt-auto">
+                            تفاصيل الفعالية
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الفعالية الخامسة -->
+            <div class="col-md-6 col-lg-4 event-item" data-category="family" data-date="2026-12-10" data-location="دمشق"
+                data-event-id="family">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event-family.jpg" class="card-img-top" alt="الفعالية العائلية">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-info text-dark align-self-start mb-2">
+                            عائلي
+                        </span>
+
+                        <h3 class="h5 card-title">
+                            يوم الأنشطة العائلية
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            <strong>التاريخ:</strong> 10 كانون الأول 2026
+                        </p>
+
+                        <p class="text-muted mb-2">
+                            <strong>الموقع:</strong> دمشق
+                        </p>
+
+                        <p class="card-text">
+                            مجموعة من الأنشطة الترفيهية والمسابقات
+                            المناسبة لقضاء وقت ممتع مع العائلة.
+                        </p>
+
+                        <a href="event.html?id=family" class="btn btn-primary mt-auto">
+                            تفاصيل الفعالية
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- تظهر هذه الرسالة إذا لم توجد نتائج -->
+        <p id="noResults" class="alert alert-info text-center mt-4 d-none">
+            لم يتم العثور على فعاليات تطابق البحث.
+        </p>
+
+    </main>
+
+    <!-- التذييل -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">
+                جميع الحقوق محفوظة © <span id="currentYear"></span>
+                - دليل فعاليات الجامعة الافتراضية
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ملف JavaScript الخاص بالمشروع -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
