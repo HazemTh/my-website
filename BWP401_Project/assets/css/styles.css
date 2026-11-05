@@ -1,0 +1,309 @@
+/* =========================================
+   1. الألوان الأساسية للموقع
+   ========================================= */
+
+:root {
+    --primary-color: #2457a7;
+    --secondary-color: #18a999;
+    --background-color: #f5f7fb;
+    --surface-color: #ffffff;
+    --text-color: #253047;
+    --muted-color: #687386;
+    --border-color: #e2e8f0;
+}
+
+
+/* =========================================
+   2. التنسيق العام للصفحة
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Tahoma, Arial, sans-serif;
+    line-height: 1.8;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: color 0.2s ease;
+}
+
+
+/* =========================================
+   3. شريط التنقل
+   ========================================= */
+
+.navbar.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.2px;
+}
+
+.navbar .nav-link {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   4. قسم الترحيب الرئيسي
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg,
+            #e7efff 0%,
+            #e5faf5 100%);
+    color: var(--text-color);
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.hero-section h1 {
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+.hero-section p {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--muted-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #193f7c;
+    border-color: #193f7c;
+}
+
+
+/* =========================================
+   5. عناوين الأقسام
+   ========================================= */
+
+section h2 {
+    line-height: 1.5;
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.section-heading p {
+    color: var(--muted-color);
+}
+
+
+/* =========================================
+   6. بطاقات الفعاليات
+   ========================================= */
+
+.event-card {
+    height: 100%;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.11);
+}
+
+.event-card .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #e2e8f0;
+}
+
+.event-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+}
+
+.event-card .card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.event-card .card-text {
+    color: var(--muted-color);
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+
+.event-card .btn {
+    margin-top: auto;
+}
+
+
+/* =========================================
+   7. شارات تصنيفات الفعاليات
+   ========================================= */
+
+.event-card .badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+}
+
+
+/* =========================================
+   8. قسم التصنيفات
+   ========================================= */
+
+.categories-section {
+    background-color: #eaf1ff;
+}
+
+.categories-section .btn {
+    min-width: 100px;
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+}
+
+.categories-section .btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   9. قسم فريق المشروع
+   ========================================= */
+
+.team-section .list-group {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.team-section .list-group-item {
+    padding: 1rem;
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+}
+
+
+/* =========================================
+   10. تذييل الموقع
+   ========================================= */
+
+footer.bg-dark {
+    background-color: #172338 !important;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #a9d8ff;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   11. تحسينات الشاشات المتوسطة
+   ========================================= */
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    .event-card .card-img-top {
+        height: 200px;
+    }
+}
+
+
+/* =========================================
+   12. تحسينات شاشات الموبايل
+   ========================================= */
+
+@media (max-width: 575.98px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .hero-section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .event-card .card-img-top {
+        height: 190px;
+    }
+
+    .categories-section .btn {
+        flex: 1 1 40%;
+    }
+}
+
+
+/* =========================================
+   13. احترام إعداد تقليل الحركة
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
